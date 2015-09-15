@@ -29,38 +29,41 @@ public class Histogram extends Applet {
 	}
 	
 	public void paint(Graphics g) {
+	
+		int x = getWidth();
+		int y = getHeight();
 		
 		/* Coordinate System */
-		g.drawLine(getWidth()/5, getHeight()/8*7, getWidth()/5*4, getHeight()/8*7); //x-axis
-		g.drawLine(getWidth()/5, getHeight()/8*7, getWidth()/5, 100); //y-axis
-		g.drawString("100", getWidth()/5-(35+getWidth()/100), 105);
-		g.drawLine(getWidth()/5-(5+getWidth()/100), 100, getWidth()/5+(5+getWidth()/100), 100); //y=100
-		g.drawString("80", getWidth()/5-(28+getWidth()/100), 105+(getHeight()/8*7-100)/5);
-		g.drawLine(getWidth()/5-(5+getWidth()/100), 100+(getHeight()/8*7-100)/5, getWidth()/5+(5+getWidth()/100), 100+(getHeight()/8*7-100)/5); //y=80
-		g.drawString("60", getWidth()/5-(28+getWidth()/100), 105+(getHeight()/8*7-100)/5*2);
-		g.drawLine(getWidth()/5-(5+getWidth()/100), 100+(getHeight()/8*7-100)/5*2, getWidth()/5+(5+getWidth()/100), 100+(getHeight()/8*7-100)/5*2); //y=60
-		g.drawString("40", getWidth()/5-(28+getWidth()/100), 105+(getHeight()/8*7-100)/5*3);
-		g.drawLine(getWidth()/5-(5+getWidth()/100), 100+(getHeight()/8*7-100)/5*3, getWidth()/5+(5+getWidth()/100), 100+(getHeight()/8*7-100)/5*3); //y=40
-		g.drawString("20", getWidth()/5-(28+getWidth()/100), 105+(getHeight()/8*7-100)/5*4);
-		g.drawLine(getWidth()/5-(5+getWidth()/100), 100+(getHeight()/8*7-100)/5*4, getWidth()/5+(5+getWidth()/100), 100+(getHeight()/8*7-100)/5*4); //y=20
+		g.drawLine(x/5, y/8*7, x/5*4, y/8*7); //x-axis
+		g.drawLine(x/5, y/8*7, x/5, 100); //y-axis
+		g.drawString("100", x/5-(35+x/100), 105+(y/8*7-100)/5*0);
+		g.drawString( "80", x/5-(28+x/100), 105+(y/8*7-100)/5*1);
+		g.drawString( "60", x/5-(28+x/100), 105+(y/8*7-100)/5*2);
+		g.drawString( "40", x/5-(28+x/100), 105+(y/8*7-100)/5*3);
+		g.drawString( "20", x/5-(28+x/100), 105+(y/8*7-100)/5*4);
+		g.drawLine(x/5-(5+x/100), 100+(y/8*7-100)/5*0, x/5+(5+x/100), 100+(y/8*7-100)/5*0); //y=100
+		g.drawLine(x/5-(5+x/100), 100+(y/8*7-100)/5*1, x/5+(5+x/100), 100+(y/8*7-100)/5*1); //y=80
+		g.drawLine(x/5-(5+x/100), 100+(y/8*7-100)/5*2, x/5+(5+x/100), 100+(y/8*7-100)/5*2); //y=60
+		g.drawLine(x/5-(5+x/100), 100+(y/8*7-100)/5*3, x/5+(5+x/100), 100+(y/8*7-100)/5*3); //y=40
+		g.drawLine(x/5-(5+x/100), 100+(y/8*7-100)/5*4, x/5+(5+x/100), 100+(y/8*7-100)/5*4); //y=20
 
 		/* Arrow */
-		g.drawString("y in kg", getWidth()/10-30, 90+(getHeight()/8*7-100)/10);
-		g.drawLine(getWidth()/10-15, 100+(getHeight()/8*7-100)/10, getWidth()/10-15, 100+(getHeight()/8*7-100)/10*9); //arrow mid
-		g.drawLine(getWidth()/10-15, 100+(getHeight()/8*7-100)/10, getWidth()/10-15-getWidth()/60, 100+(getHeight()/8*7-100)/10+getHeight()/25); //arrow left
-		g.drawLine(getWidth()/10-15, 100+(getHeight()/8*7-100)/10, getWidth()/10-15+getWidth()/60, 100+(getHeight()/8*7-100)/10+getHeight()/25); //arrow right
+		g.drawString("y in kg", x/10-30, 90+(y/8*7-100)/10);
+		g.drawLine(x/10-15, 100+(y/8*7-100)/10, x/10-15		, 100+(y/8*7-100)/10*9	 ); //arrow mid
+		g.drawLine(x/10-15, 100+(y/8*7-100)/10, x/10-15-x/60, 100+(y/8*7-100)/10+y/25); //arrow left
+		g.drawLine(x/10-15, 100+(y/8*7-100)/10, x/10-15+x/60, 100+(y/8*7-100)/10+y/25); //arrow right
 
 		/* Bars */
 		g.setColor(Color.magenta);
-		g.fillRect(getWidth()/5+(getWidth()/5*3)/10*1, getHeight()/8*7-(getHeight()/8*7-100)*valerie/100, (getWidth()/5*3)/5, (getHeight()/8*7-100)*valerie/100); //Valerie
+		g.fillRect(x/5+(x/5*3)/10*1, y/8*7-(y/8*7-100)*valerie/100, (x/5*3)/5, (y/8*7-100)*valerie/100); //Valerie
 		g.setColor(Color.cyan);
-		g.fillRect(getWidth()/5+(getWidth()/5*3)/10*4, getHeight()/8*7-(getHeight()/8*7-100)*jeroen/100, (getWidth()/5*3)/5, (getHeight()/8*7-100)*jeroen/100); //Jeroen
+		g.fillRect(x/5+(x/5*3)/10*4, y/8*7-(y/8*7-100)*jeroen /100, (x/5*3)/5, (y/8*7-100)*jeroen /100); //Jeroen
 		g.setColor(Color.yellow);
-		g.fillRect(getWidth()/5+(getWidth()/5*3)/10*7, getHeight()/8*7-(getHeight()/8*7-100)*hans/100, (getWidth()/5*3)/5, (getHeight()/8*7-100)*hans/100); //Hans
+		g.fillRect(x/5+(x/5*3)/10*7, y/8*7-(y/8*7-100)*hans   /100, (x/5*3)/5, (y/8*7-100)*hans   /100); //Hans
 		g.setColor(Color.black);
-		g.drawRect(getWidth()/5+(getWidth()/5*3)/10*1, getHeight()/8*7-(getHeight()/8*7-100)*valerie/100, (getWidth()/5*3)/5, (getHeight()/8*7-100)*valerie/100); //Valerie outline
-		g.drawRect(getWidth()/5+(getWidth()/5*3)/10*4, getHeight()/8*7-(getHeight()/8*7-100)*jeroen/100, (getWidth()/5*3)/5, (getHeight()/8*7-100)*jeroen/100); //Jeroen outline
-		g.drawRect(getWidth()/5+(getWidth()/5*3)/10*7, getHeight()/8*7-(getHeight()/8*7-100)*hans/100, (getWidth()/5*3)/5, (getHeight()/8*7-100)*hans/100); //Hans outline
+		g.drawRect(x/5+(x/5*3)/10*1, y/8*7-(y/8*7-100)*valerie/100, (x/5*3)/5, (y/8*7-100)*valerie/100); //Valerie outline
+		g.drawRect(x/5+(x/5*3)/10*4, y/8*7-(y/8*7-100)*jeroen /100, (x/5*3)/5, (y/8*7-100)*jeroen /100); //Jeroen outline
+		g.drawRect(x/5+(x/5*3)/10*7, y/8*7-(y/8*7-100)*hans   /100, (x/5*3)/5, (y/8*7-100)*hans   /100); //Hans outline
 	}
 	
 	class InputListener implements ActionListener {
