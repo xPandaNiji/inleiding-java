@@ -3,9 +3,8 @@ package h04_4_8_TextFields;
 import java.applet.*;
 import java.awt.*;
 import java.awt.event.*;
-import java.awt.geom.AffineTransform;
 
-public class Histogram extends Applet{
+public class Histogram extends Applet {
 	
 	int valerie = 40;
 	int jeroen = 100;
@@ -18,7 +17,7 @@ public class Histogram extends Applet{
 	TextField hansInput = new TextField("", 5);
 	Button button = new Button("OK");
 	
-	public void init(){
+	public void init() {
 		setSize(800, 600);
 		add(valerieLabel); valerieLabel.setBackground(Color.magenta);
 		add(valerieInput); valerieInput.addActionListener(new InputListener());
@@ -29,10 +28,10 @@ public class Histogram extends Applet{
 		add(button); button.addActionListener(new InputListener());
 	}
 	
-	public void paint(Graphics g){
+	public void paint(Graphics g) {
 		
 		/* Coordinate System */
-		g.drawLine(getWidth()/5, getHeight()/8*7, getWidth()/5*4, getHeight()/8*7);	//x-axis
+		g.drawLine(getWidth()/5, getHeight()/8*7, getWidth()/5*4, getHeight()/8*7); //x-axis
 		g.drawLine(getWidth()/5, getHeight()/8*7, getWidth()/5, 100); //y-axis
 		g.drawString("100", getWidth()/5-(35+getWidth()/100), 105);
 		g.drawLine(getWidth()/5-(5+getWidth()/100), 100, getWidth()/5+(5+getWidth()/100), 100); //y=100
