@@ -25,10 +25,6 @@ public class FourButtonsCounter extends Applet{
 	}
 	
 	public void paint(Graphics g) {
-		m.setLabel("Man, maar geen student");
-		v.setLabel("Vrouw, maar geen student");
-		mStudent.setLabel("Mannelijke student");
-		vStudent.setLabel("Vrouwelijke student");
 		g.drawString("Totaal aantal mannen: " + mCounter, getWidth()/2-60, 90);
 		g.drawString("Waarvan studenten: " + mStudentCounter, getWidth()/2-50, 105);
 		g.drawString("Totaal aantal vrouwen: " + vCounter, getWidth()/2-60, 125);
